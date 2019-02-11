@@ -1,0 +1,1 @@
+url = "https://www.universityadmissions.se/intl/search?period=1&freeText=Japanese&semesterPart=0"

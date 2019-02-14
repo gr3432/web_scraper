@@ -6,12 +6,12 @@ r = requests.get(url)
 
 soup = BeautifulSoup(r.text, 'html.parser')
 
+# Get search results and reduce unnecessary information
 search_results = soup.find('ul', class_='searchResult').find_all('li')
 
-names = [li.find_all('span', class_='appl_fontsmall') for li in search_results]
+search_results = [li.find_all('span', class_='appl_fontsmall') for li in search_results]
 
 # the first span contains the credits and the second the university name and location
-names = [name[1].text.strip() for name in names]
+search_results = [uni[1].text.strip() for uni in search_results]
 
-print(names)
-
+print(search_results)
